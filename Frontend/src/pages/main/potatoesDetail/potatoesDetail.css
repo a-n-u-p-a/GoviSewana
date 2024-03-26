@@ -1,0 +1,26 @@
+.pot_detail_section {
+    width: 80%;
+    height: 75%;
+    background-color: #4b8f16;
+    margin-top: 2%;
+    border-radius: 20px;
+}
+
+.pot_detail_h1 {
+    margin-top: 2%;
+    margin-left: 5%;
+    color: white;
+    text-align: left;
+}
+
+.pot_detail_content{
+    width: 90%;
+    height: auto;
+    margin-bottom: 2%;
+    background-color: #78a655;
+    border: 2px solid white;
+    padding-left: 5%;
+    overflow-y: auto;
+    border-radius: 15px;
+    overflow-x: hidden;
+}

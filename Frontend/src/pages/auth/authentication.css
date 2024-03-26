@@ -1,0 +1,64 @@
+.auth_main_section {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("../../assets/images/sign up.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.auth_side_section {
+    width: 50%;
+    height: 100%;
+    /*background-color: red;*/
+}
+
+.auth_left_header {
+    width: 80%;
+    height: 6%;
+    /*background-color: green;*/
+}
+
+.auth_icon_section {
+    width: 8%;
+    height: 100%;
+    /*background-color: black;*/
+}
+
+.auth_icon {
+    width: auto;
+    height: 90%;
+}
+
+.auth_side_section p {
+    font-size: 0.8rem;
+}
+
+.auth_image_section {
+    width: 70%;
+    height: 60%;
+}
+
+.auth_img {
+    width: auto;
+    height: 70%;
+}
+
+.auth_border {
+    /*border: 1px solid darkgray;*/
+}
+
+.sign_main_section {
+    width: 50vw;
+    height: 100vh;
+}
+
+.sign_text_section {
+    width: 65%;
+    height: 15%;
+}
+
+.sign_p {
+    font-weight: 400;
+}
+

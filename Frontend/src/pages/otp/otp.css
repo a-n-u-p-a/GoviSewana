@@ -1,0 +1,66 @@
+.otp_main_section {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../assets/images/otp_bg.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.ot_top_section {
+    width: 80%;
+    height: 70%;
+    border-radius: 30px;
+    background-color: #75b69b;
+}
+
+.otp_side_section {
+    width: 50%;
+    height: 100%;
+}
+
+.ot_img {
+    width: auto;
+    height: 80%;
+}
+
+.otp_p {
+    text-align: center;
+}
+
+.otp_box_section {
+    width: 80%;
+    height: 15%;
+}
+
+.otp_box_sub {
+    width: 20%;
+    height: 100%;
+}
+
+.otp_button_section {
+    width: 65%;
+    height: 10%;
+    margin-top: 5%;
+}
+
+.otp_span {
+    color: #005d37;
+}
+
+.otp_p1 {
+    color: #009658;
+}
+
+.otp_footer_section {
+    width: 50%;
+    height: 10%;
+}
+
+.otp_call {
+    margin-top: -1%;
+}
+
+.otp_span1 {
+    color: #009658;
+    font-weight: bold;
+}

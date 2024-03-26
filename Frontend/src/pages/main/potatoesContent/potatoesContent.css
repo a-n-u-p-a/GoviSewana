@@ -1,0 +1,66 @@
+.pot_content_main_section {
+    width: 100%;
+    height: 85%;
+    background-image: url("../../../assets/images/tips page 2.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.pot_content_container {
+    width: 80%;
+    height: 10%;
+    color: white;
+    font-size: 15px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pot_content_button {
+    width: 10%;
+    height: 80%;
+}
+
+.space_pot {
+    width: 5%;
+}
+
+.pot_content_header {
+    width: 85%;
+    height: 100%;
+    background-color: #027948;
+    color: white;
+    font-size: 15px;
+    border-radius: 20px;
+}
+
+.pot_content_section {
+    width: 80%;
+    height: 75%;
+    background-color: #91a572;
+    margin-top: 2%;
+    border-radius: 20px;
+}
+
+.pot_content_txt {
+    font-size: 19px;
+    cursor: pointer !important;
+    margin-left: 10%;
+    border: 1px solid rgb(45, 81, 34);
+    border-radius: 5px;
+    width: 50%;
+
+}
+
+.pot_content_txt:hover {
+    outline: 1px #12B76A solid;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #1a6343;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.5s all 0.5s ease-in;
+    width: 50%;
+    transform: scale(1.15);
+    color: azure;
+}

@@ -1,0 +1,108 @@
+.yie_main_section {
+    width: 100%;
+    height: auto;
+    background-image: url("../../../assets/images/table page horizontal.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.yie_sub_main{
+    width: 90%;
+    height: 90%;
+    background-color: #d4e5c6;
+    border: 2px solid #167956;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.yie_sub_section {
+    width: 90%;
+    height: auto;
+}
+
+.yie_top_section {
+    width: 100%;
+    height: auto;
+}
+
+.yie_tbl_section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 2px solid #1e7355;
+    border-radius: 10px;
+    background-color: #5c8b7a;
+    width: 100%;
+    height: auto;
+}
+
+.tblHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height: 40px;
+    background-color: #364540;
+    border-radius: 10px;
+    width: 150px;
+}
+
+.tblHeader p {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.tblHeader img {
+    width: 32px;
+    height: 32px;
+}
+
+.yie_table_space {
+    height: 10px;
+}
+
+.yie_button_section {
+    width: 100%;
+    height: 3rem;
+}
+
+.yie_yes_no_section {
+    width: 70%;
+    height: 100%;
+    color: white;
+    border-radius: 10px;
+    background-color: #4d724a;
+}
+
+.yie_text_section {
+    width: 70%;
+    height: 100%;
+}
+
+.yie_button_sub1 {
+    width: 15%;
+    height: 100%;
+}
+
+.yie_crop_section {
+    width: 30%;
+    height: 100%;
+}
+
+.yie_p {
+    margin-left: 2%;
+}
+
+.yie_button_section1 {
+    height: 300px;
+}
+
+.yie_space {
+    height: 10px;
+}
+
+.yie_separator {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}

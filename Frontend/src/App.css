@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+h1, h2, h3, h4, h5, h6, p, a, input {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex_justify {
+    display: flex;
+    justify-content: center;
+}
+
+.flex_align {
+    display: flex;
+    align-items: center;
+}
+
+.flex_row {
+    flex-direction: row;
+}
+
+.flex_col {
+    flex-direction: column;
+}
+
+/*COMPONENTS ==========================================================================================================*/
+/* .customButton {
+    width: 100%;
+    height: 100%;
+    background-color: #027948;
+    color: white;
+    border: none;
+    border-radius: 10px;
+} */
+
+.customButton {
+    width: 100%;
+    height: 100%;
+    background-color: #027948;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.customButton:hover {
+    background-color: #0cb254; /* New color for the hover state */
+}
+
+.customInput {
+    width: 100%;
+    height: 100%;
+}
+
+.customInputLabel {
+    width: 100%;
+    height: 34px;
+}
+
+.customInputLabelName {
+    font-size: 14px;
+}
+
+.customInputSection {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.customInputField {
+    width: 100%;
+    height: 45px;
+    border: 1px solid gray;
+    border-radius: 7px;
+    padding-left: 5px;
+}
+
+.customInputIcon {
+    color: #aaa;
+    margin-left: -20px;
+}
+
+.custom_title_section {
+    width: 80%;
+    height: 7%;
+    color: white;
+    text-align: center;
+}
+
+.customOtpBoxMainSection {
+    width: 90%;
+    height: 90%;
+}
+
+.customOtpBox {
+    width: 80%;
+    height: 100%;
+}
+
+.customIconButtonSection:hover
+.customIconButtonRight:hover
+{
+
+    outline: 1px #12B76A solid;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #073D26 ;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.5s all 0.5s ease-in;
+    width:70%;
+}
+
+
+/*Footer --------------------------------------------------------------------------*/
+.fo_main_section {
+    width: 100%;
+    height: 100%;
+    font-size: 0.9rem;
+    font-weight: 200 !important;
+}
+
+.fo_top_section {
+    width: 100%;
+    height: 75%;
+    background-image: linear-gradient(to top, #002214, #003420, #00472b, #005b37, #027043);
+}
+
+.fo_bottom_section {
+    width: 100%;
+    height: 25%;
+    background-color: #000c07;
+}
+
+.fo_mid_section {
+    width: 33.2%;
+    height: 100%;
+}
+
+.fo_sub_section1 {
+    width: 25%;
+    height: 100%;
+}
+
+.foLogo {
+    height: 50%;
+    margin-left: 40%;
+}
+
+.fo_p {
+    color: white;
+}
+
+.fo_icons {
+    color: white;
+}
+
+.fo_social_section {
+    width: 90%;
+    height: 35%;
+    color: white;
+}
+
+.fo_social_icon {
+    margin: 10px;
+    color: white;
+}
+
+.fo_social_title {
+    width: 30%;
+    height: 100%;
+}
+
+.fo_social_content {
+    width: 50%;
+    height: 100%;
+}
+
+.fo_bottom_sub1 {
+    width: 70%;
+    height: 100%;
+}
+
+.fo_bottom_sub2 {
+    width: 30%;
+    height: 100%;
+}
+
+.fo_btn {
+    margin: 2%;
+    color: white;
+}
+/*Footer --------------------------------------------------------------------------*/
+
+/*NAV BAR -------------------------------------------------------------------------*/
+.nav_main_section {
+    width: 100%;
+    height: 100%;
+    background-color: #236629;
+}
+
+.nav_icon_section {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    margin-right: 10px;
+    color: white;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav_title_section {
+    width: 100%;
+    height: 10%;
+}
+
+.nav_title_logo {
+    width: auto;
+    height: 60%;
+}
+
+.nav_profile_section {
+    width: 100%;
+    height: 30%;
+}
+
+.nav_profile_img {
+    width: auto;
+    height: 60%;
+}
+
+.nav_profile_p {
+    color: white;
+    text-align: center;
+}
+
+.nav_separator {
+    width: 80%;
+    height: 1.5px;
+    background-color: white;
+}
+
+.nav_account_section {
+    width: 100%;
+    height: 40%;
+    margin-top: 5%;
+}
+
+.nav_account_button {
+    width: 100%;
+    height: 16%;
+    cursor: pointer;
+}
+
+.nav_account_bottom_button {
+    width: 100%;
+    height: 40%;
+}
+
+
+.nav_bottom_section {
+    width: 100%;
+    height: 20%;
+    margin-top: 1%;
+}
+
+/*NAV BAR -------------------------------------------------------------------------*/
+
+/*Custom Icon Button --------------------------------------------------------------*/
+.customIconButtonSection {
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.customIconButtonLeft {
+    width: 20%;
+    height: 100%;
+}
+
+.customIconButtonRight {
+    width: 80%;
+    height: 100%;
+}
+
+.customIconButtonTxt {
+    margin-left: 2%;
+}
+
+/*Custom Icon Button --------------------------------------------------------------*/
+
+/*Crop --------------------*/
+.crop-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+    background-color: #5c8b7a;
+    width: 96%;
+    height: auto;
+}
+
+.crop-form {
+    margin-bottom: 20px;
+}
+
+.crop-input-group {
+    margin-bottom: 10px;
+    flex: 1;
+}
+
+.crop_space1 {
+    margin-left: 10px;
+}
+
+.crop_select_custom {
+    height: 40px;
+}
+
+.crop-label {
+    margin-bottom: 5px;
+    color: white;
+}
+
+.crop-input,
+.crop-select {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 8px;
+    width: 150px;
+}
+
+.crop-button {
+    background-color: #5c8b7b;
+    color: #fff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 10px 10px;
+    width: 200px;
+    margin-top: 1.5%;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.crop-button:hover{
+    /* background-color: #0cb254; */
+    background-color: #006400;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+
+.crop-result {
+    flex: 1;
+    background-color: #5c8b7b;
+    color: #fff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.crop_space {
+    width: 1%;
+}
+/*Crop --------------------*/
+
+/*table============================*/
+.table-container {
+    max-height: 230px; /* Adjust the height as needed */
+    overflow-y: auto;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.table-header {
+    background-color: #ccc;
+}
+
+.table-cell {
+    border: 1px solid #000;
+    padding: 8px;
+}
+
+.table-body {
+    text-align: center;
+}
+
+.excess-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 20px;
+    width: 90px;
+}
+
+.arrow-icon {
+    margin-right: 5px;
+}
+
+.excess-green {
+    background-color: rgba(0, 128, 0, 0.3);
+    color: #006400;
+}
+
+.excess-red {
+    background-color: rgba(255, 0, 0, 0.3);
+    color: #ff0000;
+}
+
+.excess-blue {
+    background-color: rgba(0, 0, 255, 0.3);
+    color: #0000ff;
+}
+/*table===========================*/
+
+/*recommended====================================*/
+.custom_rec_card_section {
+    width: 33%;
+    height: 100%;
+}
+
+.custom_rec_card_mini {
+    width: 90%;
+    height: 90%;
+    border: 2px solid #00be4f;
+    border-radius: 20px;
+    background-color: #d4e5c6;
+}
+
+.custom_rec_card_img_section {
+    width: 80%;
+    height: 30%;
+}
+
+.custom_rec_card_img {
+    height: 70%;
+}
+
+.custom_rec_card_separator {
+    width: 80%;
+    height: 1px;
+    background-color: gray;
+}
+
+.custom_card_data {
+    width: 80%;
+    height: 8%;
+    margin-top: 1%;
+}
+
+.custom_rec_card_data_title {
+    width: 81%;
+    height: 100%;
+}
+
+.custom_rec_card_data_set {
+    width: 19%;
+    height: 100%;
+}
+
+.custom_rec_button_section {
+    width: 80%;
+    height: 12%;
+    margin-top: 5%;
+}
+/*recommended====================================*/
+
+/*cultivation=========================*/
+.custom_cultivation_main {
+    width: 90%;
+    border-radius: 15px;
+    height: 95%;
+    background-color: white;
+}
+
+.custom_cul_img_section {
+    width: 80%;
+    height: 30%;
+}
+
+.custom_cul_img {
+    height: 90%;
+}
+
+.custom_cul_separator {
+    width: 80%;
+    height: 0.5%;
+    background-color: gray;
+}
+
+.custom_cul_p {
+    text-align: center;
+    font-size: 0.9rem;
+    width: 80%;
+}
+.custom_cul_button_section{
+    width: 80%;
+    height: 20%;
+}
+.custom_cul_button{
+    width: 80%;
+    height: 60%;
+    border-radius: 40px;
+}
+/*cultivation=========================*/
+
+.bgGreen {
+    background-color: lightseagreen !important;
+}
+
+.bgBlue {
+    background-color: deepskyblue !important;
+}
+

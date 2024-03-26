@@ -1,0 +1,39 @@
+.cul_main_section {
+    width: 100%;
+    height: 85%;
+    background-image: url("../../../assets/images/tips page 1.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.cul_header_section {
+    width: 50%;
+    height: 13%;
+    background-color: #027948;
+    color: white;
+    border-radius: 15px;
+}
+
+.cul_content_section {
+    width: 80%;
+    height: 70%;
+    margin-top: 2%;
+    border-radius: 20px;
+    background-color: #64e659;
+}
+
+.cul_content_title {
+    width: 80%;
+    height: 10%;
+    color: #027948;
+}
+
+.cul_content_card_section {
+    width: 75%;
+    height: 80%;
+}
+
+.cul_card_section {
+    width: 33%;
+    height: 100%;
+}

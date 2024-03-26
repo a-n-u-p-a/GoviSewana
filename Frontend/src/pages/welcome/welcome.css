@@ -1,0 +1,84 @@
+.wel_main_section {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wel_side_section {
+    width: 50vw;
+    height: 100%;
+}
+
+.wel_img {
+    background-image: url("../../assets/images/welcome-bg.png");
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: 100%;
+}
+
+.wel_logo {
+    width: auto;
+    height: 12%;
+}
+
+.wel_name_logo {
+    width: auto;
+    height: 15%;
+}
+
+.wel_space {
+    height: 17%;
+}
+
+.wel_bg_color1 {
+    background-color: #6b8558;
+}
+
+.wel_select_lang {
+    width: 70%;
+    height: 5%;
+    color: white;
+}
+
+.wel_combo_box {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 2%;
+}
+
+.wel_combo_box:focus {
+    outline: none;
+}
+
+.wel_combo_box option:focus {
+    border: none;
+}
+
+.wel_title_1 {
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+}
+
+.wel_title_2 {
+    color: white;
+    text-align: center;
+    width: 80%;
+    font-weight: 200;
+}
+
+.wel_button_section {
+    width: 30%;
+    height: 7%;
+    margin-top: 5%;
+}
+
+.wel_button {
+    background-color: white;
+    color: #3f6050;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+

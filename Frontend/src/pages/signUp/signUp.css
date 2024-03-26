@@ -1,0 +1,18 @@
+.signUp_button_section {
+    width: 40%;
+    height: 7%;
+    margin-top: 5%;
+}
+
+
+.sign_span {
+    text-decoration: none;
+    color: #039458;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.sign_span:hover{
+    text-decoration: underline;
+    color: #0cb254 ;
+}

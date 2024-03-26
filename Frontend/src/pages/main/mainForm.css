@@ -1,0 +1,22 @@
+.main_form_section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.main_form_nav_bar_section {
+    flex: 0 0 auto;
+    width: 15%;
+}
+
+.main_form_content_section {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto !important;
+}
+
+.main_form_footer {
+    width: 100%;
+    height: 16%;
+}

@@ -1,0 +1,42 @@
+.rec_main_section {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../../assets/images/crop recommendation.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.rec_sub_main_section {
+    width: 90%;
+    height: 90%;
+}
+
+.rec_top_section {
+    width: 100%;
+    height: 15%;
+}
+
+.rec_separator {
+    width: 45%;
+    height: 1%;
+    background-color: black;
+}
+
+.rec_week_number {
+    background-color: #6d6d6e;
+    padding: 10px;
+    margin-left: 1%;
+    color: white;
+    border-radius: 12px;
+}
+
+.rec_card_section {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.rec_card_sub_section {
+    width: 100%;
+    height: 100%;
+}
