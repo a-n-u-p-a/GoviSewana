@@ -40,7 +40,7 @@ const SignIn = ({goToSignUp}) => {
 
     const handleButtonClick = async () => {
         try {
-            const url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/login/send_otp/';
+            const url = 'https://govisewana-3yc5uvvuza-uc.a.run.app/login/send_otp/';
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
