@@ -26,7 +26,7 @@ const TableComponentPotato = () => {
 
     async function fetchTabeleData() {
         try {
-            let url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/yieldPrediction/excess/';
+            let url = 'https://govisewana-3yc5uvvuza-uc.a.run.app/yieldPrediction/excess/';
             let response = await fetch(url, {
                 method: 'POST',
                 headers: {
