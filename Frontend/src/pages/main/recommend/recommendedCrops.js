@@ -28,7 +28,7 @@ const RecommendedCrops = ({ON_CLICK_CROP}) => {
 
     async function fetchData() {
         try {
-            let url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/cropRecommendation/displayWeekNo/';
+            let url = 'https://govisewana-3yc5uvvuza-uc.a.run.app/cropRecommendation/displayWeekNo/';
             let response = await fetch(url);
             let result = await response.json();
             setWeekNo(result.Week_No)
