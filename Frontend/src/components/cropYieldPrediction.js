@@ -80,7 +80,7 @@ const CropYieldPrediction = ({onCropSelect}) => {
                     let result = await response.json();
                     setPredictedYield(parseInt(result.predictedYield));
                     setHarvestDate(result.harvestDate)
-                    setWeekNumber(result.setHarvestWeekNumber)
+                    setHarvestWeekNumber(result.weekNumber)
                     console.log(result);
                     
                 } else {
