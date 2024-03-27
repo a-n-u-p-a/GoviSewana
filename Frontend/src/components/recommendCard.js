@@ -21,8 +21,14 @@ const RecommendCard = ({SOURCE_IMG, ALT_IMG, ITEM_NAME, CROP_TYPE, ON_CLICK_CARD
     const [currentYield, setCurrentYield] = useState("");
     const [requiredYield, setRequiredYield] = useState("");
 
+    // Load existing data from local storage
+    const cropInfoString = localStorage.getItem("cropInfo");
+    const cropInfo = JSON.parse(cropInfoString);
+    const {Harvest_Week_No} = cropInfo;
+
     let inputData = {
-        "Crop_Type": CROP_TYPE
+        "Crop_Type": CROP_TYPE,
+        "Harvest_Week_No": Harvest_Week_No
     }
 
     useEffect(() => {

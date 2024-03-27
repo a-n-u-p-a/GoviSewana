@@ -24,7 +24,7 @@ const CropYieldPrediction = ({onCropSelect}) => {
     const [cropExtent, setCropExtent] = useState("");
     const [predictedYield, setPredictedYield] = useState("");
     const [harvestDate, setHarvestDate] = useState("");
-    const [weekNumber, setWeekNumber] = useState("");
+    const [harvestWeekNumber, setHarvestWeekNumber] = useState("");
 
 
     const handleCropChange = (e) => {
@@ -49,14 +49,15 @@ const CropYieldPrediction = ({onCropSelect}) => {
     };
 
 
-    const userInputs ={
+    const cropInfo ={
         "Crop_Type": cropType,
         "Date_of_Planting": plantingDate,
         "crop_Extent": cropExtent,
-        "Predicted_Yield": predictedYield
+        "Predicted_Yield": predictedYield,
+        "Harvest_Week_No": harvestWeekNumber
     };
 
-    localStorage.setItem("predictionInfo", JSON.stringify(userInputs));
+    localStorage.setItem("cropInfo", JSON.stringify(cropInfo));
     
 
     
@@ -79,7 +80,7 @@ const CropYieldPrediction = ({onCropSelect}) => {
                     let result = await response.json();
                     setPredictedYield(parseInt(result.predictedYield));
                     setHarvestDate(result.harvestDate)
-                    setWeekNumber(result.weekNumber)
+                    setWeekNumber(result.setHarvestWeekNumber)
                     console.log(result);
                     
                 } else {
@@ -137,7 +138,7 @@ const CropYieldPrediction = ({onCropSelect}) => {
                 <div className={"crop_space"}/>
 
                 <div className="crop-result">
-                    <label>{commonConfig[selectedLanguage].WEEK_NO} {weekNumber} </label>
+                    <label>{commonConfig[selectedLanguage].WEEK_NO} {harvestWeekNumber} </label>
                 </div>
 
             </div>

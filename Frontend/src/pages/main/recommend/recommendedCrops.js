@@ -20,23 +20,37 @@ const RecommendedCrops = ({ON_CLICK_CROP}) => {
     }, []);
 
 
-    const [weekNo, setWeekNo] = useState("");
 
-    useEffect(() => {
-        fetchData(); // Run fetchTabeleData only once when the component mounts
-    }, []);
+    // Load existing data from local storage
+    const cropInfoString = localStorage.getItem("cropInfo");
+    const cropInfo = JSON.parse(cropInfoString);
+    const {Harvest_Week_No} = cropInfo;
 
-    async function fetchData() {
-        try {
-            let url = 'https://govisewana-3yc5uvvuza-uc.a.run.app/cropRecommendation/displayWeekNo/';
-            let response = await fetch(url);
-            let result = await response.json();
-            setWeekNo(result.Week_No)
-            // console.log(result);
-        } catch (err) {
-            console.error('Network error:', err);
-        }
-    }
+    setHarvestWeekNo(Harvest_Week_No);
+
+    const [harvestweekNo, setHarvestWeekNo] = useState("");
+
+
+
+    // useEffect(() => {
+    //     fetchData(); // Run fetchTabeleData only once when the component mounts
+    // }, []);
+
+    
+    // async function fetchData() {        
+
+    //     try {
+    //         let url = 'https://govisewana-3yc5uvvuza-uc.a.run.app/cropRecommendation/displayWeekNo/';
+    //         let response = await fetch(url);
+    //         let result = await response.json();
+    //         setWeekNo(result.Week_No)
+    //         // console.log(result);
+    //     } catch (err) {
+    //         console.error('Network error:', err);
+    //     }
+    // }
+
+
 
 
     return (
@@ -50,7 +64,7 @@ const RecommendedCrops = ({ON_CLICK_CROP}) => {
                 <div className={"rec_separator"}/>
                 <div className={"flex_align"}>
                     <h3>{commonConfig[selectedLanguage].WEEK_NO} : </h3>
-                    <h3 className={"rec_week_number"}> {weekNo} </h3>
+                    <h3 className={"rec_week_number"}> {harvestweekNo} </h3>
                 </div>
                 <div className={"rec_card_section flex_col"}>
                     <div className={"rec_card_sub_section flex_align"}>

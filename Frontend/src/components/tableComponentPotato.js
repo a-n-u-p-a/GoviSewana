@@ -11,8 +11,14 @@ const TableComponentPotato = () => {
 
     const [tableRecord, setTableRecord] = useState({});
 
-    let cropType = {
-        "Crop_Type": "Potato"
+    // Load existing data from local storage
+    const cropInfoString = localStorage.getItem("cropInfo");
+    const cropInfo = JSON.parse(cropInfoString);
+    const {Harvest_Week_No} = cropInfo;
+
+    let excessFetchData = {
+        "Crop_Type": "Potato",
+        "Harvest_Week_No": Harvest_Week_No
     }
 
     useEffect(() => {
@@ -32,7 +38,7 @@ const TableComponentPotato = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(cropType)
+                body: JSON.stringify(excessFetchData)
             });
 
             // 'GET' response from Back-end 

@@ -11,8 +11,14 @@ const TableComponentCarrot = () => {
 
     const [tableRecord, setTableRecord] = useState({});
 
-    let cropType = {
-        "Crop_Type": "Carrot"
+    // Load existing data from local storage
+    const cropInfoString = localStorage.getItem("cropInfo");
+    const cropInfo = JSON.parse(cropInfoString);
+    const {Harvest_Week_No} = cropInfo;
+
+    let excessFetchData = {
+        "Crop_Type": "Carrot",
+        "Harvest_Week_No": Harvest_Week_No
     }
 
     useEffect(() => {
@@ -23,7 +29,6 @@ const TableComponentCarrot = () => {
         fetchTabeleData(); // Run fetchTabeleData only once when the component mounts
     }, [fetchTabeleData]);
 
-
     async function fetchTabeleData() {
         try {
             let url = 'https://govisewana-3yc5uvvuza-uc.a.run.app/yieldPrediction/excess/';
@@ -32,7 +37,7 @@ const TableComponentCarrot = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(cropType)
+                body: JSON.stringify(excessFetchData)
             });
 
             // 'GET' response from Back-end

@@ -94,16 +94,20 @@ def yieldPredictor(request):
 
 @api_view(['POST'])
 def excessCalculation(request):
-    # Get the today date
-    todayDateTime = datetime.datetime.now()
-    # Add 90 days to the date
-    harvest_date = todayDateTime + datetime.timedelta(days=90)
-    # Get the week number using isocalender()
-    harvest_week_number = harvest_date.isocalendar()[1]
+
+    # # Get the today date
+    # todayDateTime = datetime.datetime.now()
+    # # Add 90 days to the date
+    # harvest_date = todayDateTime + datetime.timedelta(days=90)
+    # # Get the week number using isocalender()
+    # harvest_week_number = harvest_date.isocalendar()[1]
 
     if request.method == 'POST':
         try:
-            cropType = request.data.get("Crop_Type")
+            postData = request.data # Use request.data to get the JSON data 
+            cropType = postData.get("Crop_Type")
+            harvest_week_number =postData.get("Harvest_Week_No")
+
 
             getCropYieldDocuments = yield_collection.find({"Crop_Type": cropType, "Harvest_Week_No": str(harvest_week_number)})
             getCropExcessDoc = excess_collection.find({"Crop_Type": cropType, "Week_No": str(harvest_week_number)})
@@ -131,7 +135,7 @@ def excessCalculation(request):
                 # Remove the "_id" key (JSON oblect)
                 excessData.pop("_id") 
 
-                if (int(excessData.get("Week_No")) <= harvest_week_number):
+                if (int(excessData.get("Week_No")) <= 52):
                     records["TableRow"+str(excessData.get("Week_No"))] = excessData
                 else:
                     break
