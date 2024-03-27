@@ -24,7 +24,7 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        cd backend  # Move into the backend directory
+        cd Backend  # Move into the backend directory
         pip install -r requirements.txt
     - name: Run Tests
       run: |
