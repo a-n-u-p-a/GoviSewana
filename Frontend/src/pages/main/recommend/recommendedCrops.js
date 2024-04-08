@@ -32,23 +32,23 @@ const RecommendedCrops = ({ON_CLICK_CROP}) => {
 
 
 
-    // useEffect(() => {
-    //     fetchData(); // Run fetchTabeleData only once when the component mounts
-    // }, []);
+    useEffect(() => {
+        fetchData(); // Run fetchTabeleData only once when the component mounts
+    }, []);
 
     
-    // async function fetchData() {        
+    async function fetchData() {        
 
-    //     try {
-    //         let url = 'https://govisewana-3yc5uvvuza-uc.a.run.app/cropRecommendation/displayWeekNo/';
-    //         let response = await fetch(url);
-    //         let result = await response.json();
-    //         setWeekNo(result.Week_No)
-    //         // console.log(result);
-    //     } catch (err) {
-    //         console.error('Network error:', err);
-    //     }
-    // }
+        try {
+            let url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/cropRecommendation/displayWeekNo/';
+            let response = await fetch(url);
+            let result = await response.json();
+            setWeekNo(result.Week_No)
+            // console.log(result);
+        } catch (err) {
+            console.error('Network error:', err);
+        }
+    }
 
 
 
