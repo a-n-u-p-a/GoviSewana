@@ -54,9 +54,9 @@ const YieldPrediction = ({ON_CLICK_1, ON_CLICK_2}) => {
         const userName = localStorage.getItem("Username");
 
         // Load existing data from local storage
-        const cropInfoString = localStorage.getItem("cropInfo");
-        const cropInfo = JSON.parse(cropInfoString);
-        const {Crop_Type, Date_of_Planting, crop_Extent} = cropInfo;
+        const predictionInfoString = localStorage.getItem("predictionInfo");
+        const predictionInfo = JSON.parse(predictionInfoString);
+        const {Crop_Type, Date_of_Planting, crop_Extent} = predictionInfo;
 
         let inputData = {
             "Username": userName,

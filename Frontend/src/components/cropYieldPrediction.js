@@ -24,7 +24,7 @@ const CropYieldPrediction = ({onCropSelect}) => {
     const [cropExtent, setCropExtent] = useState("");
     const [predictedYield, setPredictedYield] = useState("");
     const [harvestDate, setHarvestDate] = useState("");
-    const [harvestWeekNumber, setHarvestWeekNumber] = useState("");
+    const [weekNumber, setWeekNumber] = useState("");
 
 
     const handleCropChange = (e) => {
@@ -49,15 +49,14 @@ const CropYieldPrediction = ({onCropSelect}) => {
     };
 
 
-    const cropInfo ={
+    const userInputs ={
         "Crop_Type": cropType,
         "Date_of_Planting": plantingDate,
         "crop_Extent": cropExtent,
-        "Predicted_Yield": predictedYield,
-        "Harvest_Week_No": harvestWeekNumber
+        "Predicted_Yield": predictedYield
     };
 
-    localStorage.setItem("cropInfo", JSON.stringify(cropInfo));
+    localStorage.setItem("predictionInfo", JSON.stringify(userInputs));
     
 
     
@@ -66,7 +65,7 @@ const CropYieldPrediction = ({onCropSelect}) => {
         sendFormData();
         async function sendFormData() {
             try {
-                let url = 'https://govisewana-3yc5uvvuza-uc.a.run.app/yieldPrediction/predictor/';
+                let url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/yieldPrediction/predictor/';
                 let response = await fetch(url, {
                     method: 'POST',
                     headers: {
@@ -80,7 +79,7 @@ const CropYieldPrediction = ({onCropSelect}) => {
                     let result = await response.json();
                     setPredictedYield(parseInt(result.predictedYield));
                     setHarvestDate(result.harvestDate)
-                    setHarvestWeekNumber(result.weekNumber)
+                    setWeekNumber(result.weekNumber)
                     console.log(result);
                     
                 } else {
@@ -138,7 +137,7 @@ const CropYieldPrediction = ({onCropSelect}) => {
                 <div className={"crop_space"}/>
 
                 <div className="crop-result">
-                    <label>{commonConfig[selectedLanguage].WEEK_NO} {harvestWeekNumber} </label>
+                    <label>{commonConfig[selectedLanguage].WEEK_NO} {weekNumber} </label>
                 </div>
 
             </div>

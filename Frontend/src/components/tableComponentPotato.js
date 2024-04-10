@@ -11,14 +11,8 @@ const TableComponentPotato = () => {
 
     const [tableRecord, setTableRecord] = useState({});
 
-    // Load existing data from local storage
-    const cropInfoString = localStorage.getItem("cropInfo");
-    const cropInfo = JSON.parse(cropInfoString);
-    const {Harvest_Week_No} = cropInfo;
-
-    let excessFetchData = {
-        "Crop_Type": "Potato",
-        "Harvest_Week_No": Harvest_Week_No
+    let cropType = {
+        "Crop_Type": "Potato"
     }
 
     useEffect(() => {
@@ -32,13 +26,13 @@ const TableComponentPotato = () => {
 
     async function fetchTabeleData() {
         try {
-            let url = 'https://govisewana-3yc5uvvuza-uc.a.run.app/yieldPrediction/excess/';
+            let url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/yieldPrediction/excess/';
             let response = await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(excessFetchData)
+                body: JSON.stringify(cropType)
             });
 
             // 'GET' response from Back-end 

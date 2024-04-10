@@ -47,7 +47,7 @@ const Account = () => {
 
     async function fetchData() {
         try {
-            let url = 'https://govisewana-3yc5uvvuza-uc.a.run.app/userProfile/getUserData/';
+            let url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/userProfile/getUserData/';
             let response = await fetch(url, {
                 method: 'POST',
                 headers: {
@@ -85,7 +85,7 @@ const Account = () => {
 
         async function postUpdateData() {
             try {
-                let url = 'https://govisewana-3yc5uvvuza-uc.a.run.app/userProfile/updateUserData/';
+                let url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/userProfile/updateUserData/';
                 let response = await fetch(url, {
                     method: 'POST',
                     headers: {

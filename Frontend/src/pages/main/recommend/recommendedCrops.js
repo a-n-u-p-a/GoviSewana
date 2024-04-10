@@ -20,25 +20,13 @@ const RecommendedCrops = ({ON_CLICK_CROP}) => {
     }, []);
 
 
-
-    // Load existing data from local storage
-    const cropInfoString = localStorage.getItem("cropInfo");
-    const cropInfo = JSON.parse(cropInfoString);
-    const {Harvest_Week_No} = cropInfo;
-
-    setHarvestWeekNo(Harvest_Week_No);
-
-    const [harvestweekNo, setHarvestWeekNo] = useState("");
-
-
+    const [weekNo, setWeekNo] = useState("");
 
     useEffect(() => {
         fetchData(); // Run fetchTabeleData only once when the component mounts
     }, []);
 
-    
-    async function fetchData() {        
-
+    async function fetchData() {
         try {
             let url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/cropRecommendation/displayWeekNo/';
             let response = await fetch(url);
@@ -49,8 +37,6 @@ const RecommendedCrops = ({ON_CLICK_CROP}) => {
             console.error('Network error:', err);
         }
     }
-
-
 
 
     return (
@@ -64,7 +50,7 @@ const RecommendedCrops = ({ON_CLICK_CROP}) => {
                 <div className={"rec_separator"}/>
                 <div className={"flex_align"}>
                     <h3>{commonConfig[selectedLanguage].WEEK_NO} : </h3>
-                    <h3 className={"rec_week_number"}> {harvestweekNo} </h3>
+                    <h3 className={"rec_week_number"}> {weekNo} </h3>
                 </div>
                 <div className={"rec_card_section flex_col"}>
                     <div className={"rec_card_sub_section flex_align"}>

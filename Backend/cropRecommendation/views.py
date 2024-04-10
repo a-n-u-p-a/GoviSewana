@@ -8,37 +8,34 @@ from rest_framework.response import Response
 import datetime
 
 
-# @api_view(['GET'])
-# def displayWeekNo(request):
-#     try:
-#         # Get the today date
-#         todayDateTime = datetime.datetime.now()
-#         # Add 90 days to the date
-#         harvest_date = todayDateTime + datetime.timedelta(days=90)
-#         # Get the week number using isocalender()
-#         harvest_week_number = harvest_date.isocalendar()[1]
+@api_view(['GET'])
+def displayWeekNo(request):
+    try:
+        # Get the today date
+        todayDateTime = datetime.datetime.now()
+        # Add 90 days to the date
+        harvest_date = todayDateTime + datetime.timedelta(days=90)
+        # Get the week number using isocalender()
+        harvest_week_number = harvest_date.isocalendar()[1]
 
-#         return Response({"Week_No": harvest_week_number})
+        return Response({"Week_No": harvest_week_number})
         
-#     except Exception as e:
-#         return HttpResponse("error: "+str(e))
+    except Exception as e:
+        return HttpResponse("error: "+str(e))
 
 
 @api_view(['POST'])
 def displayCropData(request):
-
-    # # Get the today date
-    # todayDateTime = datetime.datetime.now()
-    # # Add 90 days to the date
-    # harvest_date = todayDateTime + datetime.timedelta(days=90)
-    # # Get the week number using isocalender()
-    # harvest_week_number = harvest_date.isocalendar()[1]
+    # Get the today date
+    todayDateTime = datetime.datetime.now()
+    # Add 90 days to the date
+    harvest_date = todayDateTime + datetime.timedelta(days=90)
+    # Get the week number using isocalender()
+    harvest_week_number = harvest_date.isocalendar()[1]
 
     if request.method == 'POST':
         try:
-            cropInfo = request.data # Use request.data to get the JSON data
-            cropType = cropInfo.get("Crop_Type")
-            harvest_week_number = cropInfo("Harvest_Week_No")
+            cropType = request.data.get("Crop_Type")
                 
             if (cropType != "BeetRoot"):
                 

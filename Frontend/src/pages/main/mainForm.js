@@ -67,7 +67,7 @@ const MainForm = () => {
                 />;
 
             default:
-                return <Account/>;
+                return <RecommendedCrops/>;
         }
     };
 
