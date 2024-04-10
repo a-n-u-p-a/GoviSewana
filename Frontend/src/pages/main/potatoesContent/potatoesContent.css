@@ -38,16 +38,21 @@
 .pot_content_section {
     width: 80%;
     height: 75%;
-    background-color: #91a572;
+    background-color: #72973a8e;
     margin-top: 2%;
     border-radius: 20px;
 }
 
 .pot_content_txt {
+    margin-top: 0px;
+    margin-bottom: 0%;
+    padding: 5px;
     font-size: 19px;
     cursor: pointer !important;
+    background-color: #07a05852;
     margin-left: 10%;
-    border: 1px solid rgb(45, 81, 34);
+    border: 1px solid rgb(27, 90, 8);
+    box-shadow: rgb(0, 87, 14) 5px 5px 8px;
     border-radius: 5px;
     width: 50%;
 
@@ -55,12 +60,10 @@
 
 .pot_content_txt:hover {
     outline: 1px #12B76A solid;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgb(0, 87, 14) 5px 5px 8px;
     background-color: #1a6343;
     cursor: pointer;
-    border-radius: 10px;
-    transition: 0.5s all 0.5s ease-in;
+    transition: all 0.2s ease-in;
     width: 50%;
-    transform: scale(1.15);
     color: azure;
 }

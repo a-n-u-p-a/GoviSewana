@@ -53,13 +53,16 @@ h1, h2, h3, h4, h5, h6, p, a, input {
     color: white;
     border: none;
     border-radius: 10px;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 
 .customButton:hover {
     background-color: #0cb254; /* New color for the hover state */
+    transform: scale(1.05);
+    transition: 0.2s all ease-in;
+    box-shadow: rgb(0, 34, 6) 3px 4px 3px;
 }
 
 .customInput {
@@ -117,12 +120,12 @@ h1, h2, h3, h4, h5, h6, p, a, input {
 {
 
     outline: 1px #12B76A solid;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
     background-color: #073D26 ;
     cursor: pointer;
     border-radius: 10px;
-    transition: 0.5s all 0.5s ease-in;
-    width:70%;
+    transition: 0.2s all ease-in;
+    width:100%;
 }
 
 
@@ -445,6 +448,7 @@ h1, h2, h3, h4, h5, h6, p, a, input {
     border: 2px solid #00be4f;
     border-radius: 20px;
     background-color: #d4e5c6;
+    box-shadow: rgba(0, 0, 0, 0.534) 3px 3px 5px;
 }
 
 .custom_rec_card_img_section {
@@ -512,15 +516,18 @@ h1, h2, h3, h4, h5, h6, p, a, input {
     text-align: center;
     font-size: 0.9rem;
     width: 80%;
+    margin-top: 0%;
+    margin-bottom: 2%;
 }
 .custom_cul_button_section{
     width: 80%;
     height: 20%;
 }
 .custom_cul_button{
+    margin-bottom: 5%;
     width: 80%;
-    height: 60%;
-    border-radius: 40px;
+    height: 70%;
+    border-radius: 10px;
 }
 /*cultivation=========================*/
 
