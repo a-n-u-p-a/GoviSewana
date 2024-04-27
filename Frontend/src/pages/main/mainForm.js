@@ -9,6 +9,7 @@ import CultivationTips from "./cultivationTips/cultivationTips";
 import Account from "./account/account";
 import PotatoesContent from "./potatoesContent/potatoesContent";
 import PotatoesDetail from "./potatoesDetail/potatoesDetail";
+import Welcome from "../../routes/rootRoutes";
 
 const MainForm = () => {
 
@@ -38,6 +39,9 @@ const MainForm = () => {
         switch (currentPage) {
             case 'Profile':
                 return <Account/>;
+
+            case 'Welcome':
+                return <Welcome/>;
 
             case 'Prediction':
                 return <Prediction/>;
@@ -80,6 +84,7 @@ const MainForm = () => {
                     PRI_ON_CLICK={() => handleButtonClick('Prediction')}
                     REC_ON_CLICK={() => handleButtonClick('RecommendedCrops')}
                     CUL_ON_CLICK={() => handleButtonClick('CultivationTips')}
+                    WElCOME_ON_CLICK={() => handleButtonClick('Welcome')}
                 />
             </div>
             <div className={"main_form_content_section"}>

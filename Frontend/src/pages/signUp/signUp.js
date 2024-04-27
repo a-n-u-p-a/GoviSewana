@@ -26,6 +26,8 @@ const SignUp = ({goToSignIn}) => {
     const [nic, setNic] = useState("");
     const [mobileNumber, setMobileNumber] = useState("");
     const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
     const handleNumberChange = (e) => {
@@ -43,7 +45,8 @@ const SignUp = ({goToSignIn}) => {
         "Username": username,
         "Mobile_Number": mobileNumber,
         "Full_Name": fullName,
-        "NIC": nic,
+        "Email": email,
+        "Password": password,
     };
 
     const handleButtonClick = async () => {
@@ -124,9 +127,15 @@ const SignUp = ({goToSignIn}) => {
             </div>
 
             <div className={"sign_text_section flex_center"}>
-                <CustomInput LABEL_NAME={commonConfig[selectedLanguage].NIC}
-                             PLACEHOLDER={commonConfig[selectedLanguage].NIC} icon={FaIdCard}
+                <CustomInput LABEL_NAME={commonConfig[selectedLanguage].EMAIL}
+                             PLACEHOLDER={commonConfig[selectedLanguage].EMAIL} icon={FaIdCard}
                              ON_CHANGE={handleNicChange}/>
+            </div>
+
+            <div className={"sign_text_section flex_center"}>
+                <CustomInput LABEL_NAME={commonConfig[selectedLanguage].PASSWORD}
+                             PLACEHOLDER={commonConfig[selectedLanguage].PASSWORD} icon={FaMobileAlt}
+                             ON_CHANGE={handleNumberChange}/>
             </div>
 
             <div className={"sign_text_section flex_center"}>

@@ -15,7 +15,7 @@ import CustomIconButton from "./customIconButton";
 import commonConfig from '../config/commonConfig.json';
 
 
-const NavBar = ({PROFILE_ON_CLICK, PRE_ON_CLICK, REC_ON_CLICK, PRI_ON_CLICK, CUL_ON_CLICK}) => {
+const NavBar = ({PROFILE_ON_CLICK, PRE_ON_CLICK, REC_ON_CLICK, PRI_ON_CLICK, CUL_ON_CLICK, WElCOME_ON_CLICK }) => {
 
     const [selectedLanguage, setSelectedLanguage] = useState(() => {
         return localStorage.getItem('selectedLanguage') || 'ENG';
@@ -27,6 +27,11 @@ const NavBar = ({PROFILE_ON_CLICK, PRE_ON_CLICK, REC_ON_CLICK, PRI_ON_CLICK, CUL
             setSelectedLanguage(langValue)
         }
     }, []);
+
+    const handleLogout = () => {
+        // Redirect to localhost:3000
+        window.location.href = 'http://localhost:3000';
+      };
 
     return (
         <div className={"container nav_main_section flex_col"}>
@@ -75,7 +80,7 @@ const NavBar = ({PROFILE_ON_CLICK, PRE_ON_CLICK, REC_ON_CLICK, PRI_ON_CLICK, CUL
             
 
                 <div className={"nav_account_bottom_button"}>
-                    <CustomIconButton ICON={faRightFromBracket} TITLE={commonConfig[selectedLanguage].LOGOUT}/>
+                    <CustomIconButton ICON={faRightFromBracket} TITLE={commonConfig[selectedLanguage].LOGOUT} ON_CLICK={handleLogout}/>
                 </div>
 
             </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const CustomInput = ({LABEL_NAME, PLACEHOLDER, icon, STYLE, ON_CHANGE}) => {
+const CustomInput = ({LABEL_NAME, PLACEHOLDER, icon, STYLE, ON_CHANGE, ON_FOCUS, ON_BLUR }) => {
 
     const IconComponent = icon;
 
@@ -12,7 +12,8 @@ const CustomInput = ({LABEL_NAME, PLACEHOLDER, icon, STYLE, ON_CHANGE}) => {
             </div>
 
             <div className="customInputSection flex_center">
-                <input type="text" placeholder={PLACEHOLDER} className={"customInputField"} onChange={ON_CHANGE}/>
+                <input type="text" placeholder={PLACEHOLDER} className={"customInputField"} 
+                onChange={ON_CHANGE} onFocus={ON_FOCUS} onBlur={ON_BLUR}/>
                 <IconComponent className="customInputIcon"/>
             </div>
 
