@@ -30,7 +30,7 @@ const NavBar = ({PROFILE_ON_CLICK, PRE_ON_CLICK, REC_ON_CLICK, PRI_ON_CLICK, CUL
 
     const handleLogout = () => {
         // Redirect to localhost:3000
-        window.location.href = 'http://localhost:3000';
+        window.location.href = 'https://govisewana.vercel.app';
       };
 
     return (
