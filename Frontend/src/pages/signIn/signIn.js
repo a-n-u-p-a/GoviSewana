@@ -80,7 +80,7 @@ const SignIn = ({goToSignUp}) => {
     const handleButtonClick = async () => {
         try {
             if(showInput2){
-                const url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/login/send_otp/';
+                const url = 'https://govisewana-3yc5uvvuza-uw.a.run.app/login/send_otp/';
                 const response = await fetch(url, {
                     method: 'POST',
                     headers: {
@@ -108,7 +108,7 @@ const SignIn = ({goToSignUp}) => {
                 });
             }
             } else {
-                const url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/login/check_email/';
+                const url = 'https://govisewana-3yc5uvvuza-uw.a.run.app/login/check_email/';
                 const response = await fetch(url, {
                     method: 'POST',
                     headers: {
