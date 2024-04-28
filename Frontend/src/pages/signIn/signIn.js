@@ -6,13 +6,17 @@ import CustomButton from "../../components/customButton";
 import CustomInput from "../../components/customInput";
 import {useNavigate} from "react-router-dom";
 import commonConfig from '../../config/commonConfig.json';
-import {FaIdCard, FaMobileAlt, FaUser} from "react-icons/fa";
+import {FaIdCard, FaMobileAlt} from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const SignIn = ({goToSignUp}) => {
 
     const [showInput1, setShowInput1] = useState(true);
     const [showInput2, setShowInput2] = useState(true);
+    const [mobileNumber, setMobileNumber] = useState("");
+    const [email,setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [onbutton, setonbutton] = useState();
 
     const handleInput1Focus = () =>{
         setShowInput2(false)
@@ -23,11 +27,19 @@ const SignIn = ({goToSignUp}) => {
     }
 
     const handleInput1Blur = () =>{
-        setShowInput2(true)
+        if(onbutton){
+            return
+        }else{
+            setShowInput2(true)
+        }
     }
 
     const handleInput2Blur = () =>{
-        setShowInput1(true)
+        if(onbutton){
+            return
+        }else{
+            setShowInput1(true)
+        }
     }
 
     const [selectedLanguage, setSelectedLanguage] = useState(() => {
@@ -41,9 +53,15 @@ const SignIn = ({goToSignUp}) => {
         }
     }, []);
 
-
-    const [mobileNumber, setMobileNumber] = useState("");
     const navigate = useNavigate();
+
+    const handleInputEmailChange = (e) =>{
+        setEmail(e.target.value);
+    }
+
+    const handleInputPasswordChange = (e) =>{
+        setPassword(e.target.value);
+    }
 
     const handleInputChange = (e) => {
         setMobileNumber("+94" + e.target.value);
@@ -51,6 +69,8 @@ const SignIn = ({goToSignUp}) => {
 
     let postData = {
         "Mobile_Number": mobileNumber,
+        "Email": email,
+        "Password": password,
     };
 
     // const goToOtp = () => {
@@ -59,16 +79,16 @@ const SignIn = ({goToSignUp}) => {
 
     const handleButtonClick = async () => {
         try {
-            const url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/login/send_otp/';
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(postData)
-            });
-
-            alert(postData["Mobile_Number"])
+            if(showInput2){
+                const url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/login/send_otp/';
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(postData)
+                });
+                alert(postData["Mobile_Number"])
 
             if (response.ok) {
                 const responseData = await response.json();   // Parse the JSON from the response
@@ -84,9 +104,43 @@ const SignIn = ({goToSignUp}) => {
                     icon: "error",
                     title: "Oops...",
                     text: "User Is Not Registered",
-                    footer: '<a href="#">Please try again?</a>'
+                    footer: '<a>Please try again?</a>'
                 });
             }
+            } else {
+                const url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/login/check_email/';
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(postData)
+                });
+                alert(postData["Email"])
+                console.log(postData["Email"])
+                console.log(postData["Password"])
+
+            if (response.ok) {
+                const responseData = await response.json();   
+                localStorage.setItem('Username', responseData['Username'])
+                console.log(responseData['Username'])
+                postData = {
+                    "Mobile_Number": mobileNumber,
+                    "Username": responseData["Username"]
+                }
+                navigate('/main', {replace: true, state: {postData: postData}});
+            } else {
+                await Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Wrong Email or Password!",
+                    footer: '<a>Please try again?</a>'
+                });
+            }
+            }
+
+
+            
         } catch (err) {
             console.error('Network error:', err);
             await Swal.fire({
@@ -100,15 +154,35 @@ const SignIn = ({goToSignUp}) => {
 
     const signInFunction = () => {
         const mobileNumberRegex = /^(?:\+?94)?(?:0|94)?[1-9]\d{8}$/;
-        if (mobileNumberRegex.test(mobileNumber)) {
-            handleButtonClick()
-        } else {
+        console.log('click')
+
+        if(showInput1 && showInput2){
             Swal.fire({
-                title: "Invalid Field",
-                text: "please enter valid mobile number",
+                title: "Login",
+                text: "please select one of the login methods",
                 icon: "question"
             });
+        }else{
+            handleButtonClick()
         }
+
+        // if (mobileNumberRegex.test(mobileNumber)) {
+            
+        // } else {
+        //     Swal.fire({
+        //         title: "Invalid Field",
+        //         text: "please enter valid mobile number",
+        //         icon: "question"
+        //     });
+        // }
+    }
+
+    const mouseEnterHandle=()=>{
+        setonbutton(true)
+    }
+
+    const mouseLeaveHandle=()=>{
+        setonbutton(false)
     }
 
     return (
@@ -119,7 +193,7 @@ const SignIn = ({goToSignUp}) => {
             {showInput1 && (<div className={"sign_text_section flex_center"}>
                 <CustomInput LABEL_NAME={commonConfig[selectedLanguage].EMAIL}
                              PLACEHOLDER={commonConfig[selectedLanguage].EMAIL} icon={FaIdCard}
-                             ON_CHANGE={handleInputChange}
+                             ON_CHANGE={handleInputEmailChange}
                              ON_FOCUS={handleInput1Focus}
                              ON_BLUR={handleInput1Blur}/>
             </div>)}
@@ -127,7 +201,7 @@ const SignIn = ({goToSignUp}) => {
             {showInput1 && (<div className={"sign_text_section flex_center"}>
                 <CustomInput LABEL_NAME={commonConfig[selectedLanguage].PASSWORD}
                              PLACEHOLDER={commonConfig[selectedLanguage].PASSWORD} icon={FaMobileAlt}
-                             ON_CHANGE={handleInputChange}
+                             ON_CHANGE={handleInputPasswordChange}
                              ON_FOCUS={handleInput1Focus}
                              ON_BLUR={handleInput1Blur}/>
             </div>)}
@@ -144,7 +218,9 @@ const SignIn = ({goToSignUp}) => {
 
             <div className={"signIn_button_section flex_center"}>
                 <CustomButton BTN_NAME={commonConfig[selectedLanguage].BTN_SIGNIN} CLASS_NAME={"customButton"}
-                              ON_CLICK={signInFunction}/>
+                              ON_CLICK={signInFunction}
+                              ON_MOUSE_ENTER={mouseEnterHandle}
+                              ON_MOUSE_LEAVE={mouseLeaveHandle}/>
             </div>
 
             <div className={"signUp_button_section"}>

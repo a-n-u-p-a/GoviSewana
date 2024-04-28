@@ -44,6 +44,7 @@ def send_otp(request):
       print(user_collection.get)
       return Response(status=200, data={'message': 'OTP sent successfully', 'Username': username})
     else:
+      print("inside verify otp")
       return Response(status=409, data={'message': 'User not found'})
 
     
@@ -82,3 +83,39 @@ def verify_otp(request):
         return Response(status=200, data={'message': 'User approved'})  
     else:
       return Response(status=401, data={'message': 'Wrong Otp'})
+
+@api_view(['POST'])
+def check_email(request):
+  if request.method == "POST":
+    login_data = request.data
+    print(login_data)
+    email = login_data.get("Email")
+    password = login_data.get("Password")
+
+    # phone_number = str(phone_number)
+    print(email)
+    print(password)
+
+    # Update the query to look for either version of the email
+    existing_email = user_collection.find_one({"Email": email})
+
+    if existing_email:
+      print(existing_email)
+
+      # Extract the username from the found document
+      # for data in existing_number:
+
+      getDocuments = user_collection.find_one({"Email": email})
+
+      user_email = getDocuments["Email"]
+      savedPassword = getDocuments["Password"]
+      username = getDocuments["Username"]
+
+      if (password == savedPassword):
+        return Response(status=200, data={'message': 'User approved', 'Username': username}) 
+      
+      else:
+        return Response(status=401, data={'message': 'Wrong Email or Password'})
+
+    else:
+      return Response(status=409, data={'message': 'User not found'})
