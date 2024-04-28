@@ -28,7 +28,7 @@ const Account = () => {
     const userName = localStorage.getItem("Username");
 
     const [fullName, setFullName] = useState("");
-    const [NIC, setNIC] = useState("");
+    const [email, setEmail] = useState("");
     const [telNo, setTelNo] = useState("");
 
     const handleSelectChange = (event) => {
@@ -60,7 +60,7 @@ const Account = () => {
             if (response.ok) {
                 let result = await response.json();
                 setFullName(result.Full_Name);
-                setNIC(result.NIC);
+                setEmail(result.email);
                 setTelNo(result.Mobile_Number);
                 console.log(result);
             } else {
@@ -73,7 +73,7 @@ const Account = () => {
 
     const updateData = {
         "Full_Name": fullName,
-        "NIC": NIC,
+        "EMail": email,
         "Mobile_Number": telNo,
         "Username": localStorage.getItem('Username')
     }
@@ -128,12 +128,12 @@ const Account = () => {
                     <div className={"acc_space"}/>
                     <div className={"acc_text_section flex_center"}>
                         <CustomInput
-                            LABEL_NAME={commonConfig[selectedLanguage].NIC}
+                            LABEL_NAME={commonConfig[selectedLanguage].EMAIL}
                             // PLACEHOLDER={commonConfig[selectedLanguage].ENTER_NIC}
-                            PLACEHOLDER={NIC}
+                            PLACEHOLDER={email}
                             icon={FaIdCard}
                             STYLE={{marginTop: '2%'}}
-                            ON_CHANGE={(e) => setNIC(e.target.value)}
+                            ON_CHANGE={(e) => setEmail(e.target.value)}
                         />
                     </div>
                     <div className={"acc_space"}/>
@@ -177,7 +177,7 @@ const Account = () => {
                         </div>
                         <div className={"acc_top_side1"}>
                             <h4 className={"acc_text"}>  {fullName}</h4>
-                            <h4 className={"acc_text"}> {NIC} </h4>
+                            <h4 className={"acc_text"}> {email} </h4>
                             <h4 className={"acc_text"}>  {telNo}  </h4>
                         </div>
                     </div>

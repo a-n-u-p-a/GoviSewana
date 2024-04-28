@@ -23,7 +23,6 @@ const SignUp = ({goToSignIn}) => {
 
 
     const [fullName, setFullName] = useState("");
-    const [nic, setNic] = useState("");
     const [mobileNumber, setMobileNumber] = useState("");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -37,8 +36,11 @@ const SignUp = ({goToSignIn}) => {
     const handleNameChange = (e) => {
         setFullName(e.target.value);
     }
-    const handleNicChange = (e) => {
-        setNic(e.target.value);
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    }
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
     }
 
     let postData = {
@@ -51,7 +53,7 @@ const SignUp = ({goToSignIn}) => {
 
     const handleButtonClick = async () => {
         try {
-            const url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/signup/register_details/';
+            const url = 'https://govisewana-3yc5uvvuza-uw.a.run.app/signup/register_details/';
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
@@ -60,12 +62,11 @@ const SignUp = ({goToSignIn}) => {
                 body: JSON.stringify(postData)
             });
 
-            alert(postData["Mobile_Number"])
             if (response.ok) {
                 console.log(response.status)
                 console.log("response ok,user is not registered")
                 console.log("OTP sent successfully!");
-                navigate('/otp', {replace: true, state: {postData: postData}});
+                navigate('/main', {replace: true, state: {postData: postData}});
             } else {
                 console.log(response.status)
                 alert('user is already registered, goto sign in')
@@ -90,7 +91,7 @@ const SignUp = ({goToSignIn}) => {
         const mobileNumberRegex = /^(?:\+?94)?(?:0|94)?[1-9]\d{8}$/;
 
         if (nameRegex.test(fullName)) {
-            if (nicRegex.test(nic)) {
+            if (true) {
                 if (mobileNumberRegex.test(mobileNumber)) {
                     handleButtonClick()
                 } else {
@@ -129,13 +130,13 @@ const SignUp = ({goToSignIn}) => {
             <div className={"sign_text_section flex_center"}>
                 <CustomInput LABEL_NAME={commonConfig[selectedLanguage].EMAIL}
                              PLACEHOLDER={commonConfig[selectedLanguage].EMAIL} icon={FaIdCard}
-                             ON_CHANGE={handleNicChange}/>
+                             ON_CHANGE={handleEmailChange}/>
             </div>
 
             <div className={"sign_text_section flex_center"}>
                 <CustomInput LABEL_NAME={commonConfig[selectedLanguage].PASSWORD}
                              PLACEHOLDER={commonConfig[selectedLanguage].PASSWORD} icon={FaMobileAlt}
-                             ON_CHANGE={handleNumberChange}/>
+                             ON_CHANGE={handlePasswordChange}/>
             </div>
 
             <div className={"sign_text_section flex_center"}>

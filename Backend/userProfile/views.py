@@ -32,13 +32,13 @@ def updateUserData(request):
         try:
             userInputs = request.data # Use request.data to get the JSON data
             fullName = userInputs.get("Full_Name")
-            nic = userInputs.get("NIC")
+            email = userInputs.get("Email")
             telNo = userInputs.get("Mobile_Number")
             username = userInputs.get("Username")
             
             # print(userInputs)
 
-            updateDoc = user_collection.find_one_and_update({"Username": username}, {"$set": {"Full_Name": fullName, "NIC":nic, "Mobile_Number":telNo}}, upsert=True)
+            updateDoc = user_collection.find_one_and_update({"Username": username}, {"$set": {"Full_Name": fullName, "Email":email, "Mobile_Number":telNo}}, upsert=True)
             # print(updateDoc)
 
             return HttpResponse("Successfully Updated !")
