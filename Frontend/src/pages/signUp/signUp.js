@@ -52,9 +52,11 @@ const SignUp = ({goToSignIn}) => {
         "Password": password,
     };
 
+    
+
     const handleButtonClick = async () => {
         try {
-            const url = 'https://govisewana-3yc5uvvuza-uw.a.run.app/signup/register_details/';
+            const url = ' http://127.0.0.1:8000/signup/register_details/';
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
@@ -66,7 +68,9 @@ const SignUp = ({goToSignIn}) => {
             if (response.ok) {
                 console.log(response.status)
                 console.log("response ok,user is not registered")
-                console.log("OTP sent successfully!");
+                // console.log("OTP sent successfully!");
+                // const responseData = await response.json();   
+                // localStorage.setItem('Username', responseData['Username'])
                 navigate('/main', {replace: true, state: {postData: postData}});
             } else {
                 console.log(response.status)
@@ -127,6 +131,7 @@ const SignUp = ({goToSignIn}) => {
         } else {
             // All fields are valid, proceed with sign up
             handleButtonClick();
+            localStorage.setItem("Username", username);
         }
     }
     

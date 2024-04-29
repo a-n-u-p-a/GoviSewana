@@ -14,6 +14,7 @@ def register_details(request):
     Email = registration_data.get("Email")
     Password = registration_data.get("Password")
     phone_number = registration_data.get("Mobile_Number")
+    username = registration_data.get("Username")
 
     # Check if a user with the given mobile number already exists
     phone_number = str(phone_number)
@@ -56,7 +57,7 @@ def register_details(request):
       
       user_collection.insert_one(regData)
       # print(verification_check.status)
-      return Response(status=200, data={'message': 'User registered successfully'}) 
+      return Response(status=200, data={'message': 'User registered successfully', 'Username': username}) 
     else:
       verification = client.verify.v2.services(settings.TWILIO_VERIFY_SERVICE_ID) \
           .verifications \
