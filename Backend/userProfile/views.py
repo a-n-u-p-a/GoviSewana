@@ -36,7 +36,7 @@ def updateUserData(request):
             telNo = userInputs.get("Mobile_Number")
             username = userInputs.get("Username")
             
-            # print(userInputs)
+            print(userInputs)
 
             updateDoc = user_collection.find_one_and_update({"Username": username}, {"$set": {"Full_Name": fullName, "Email":email, "Mobile_Number":telNo}}, upsert=True)
             # print(updateDoc)

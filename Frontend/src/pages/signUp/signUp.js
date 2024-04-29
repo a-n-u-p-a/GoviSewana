@@ -3,6 +3,7 @@ import './signUp.css';
 import '../auth/authentication.css';
 import CustomButton from "../../components/customButton";
 import CustomInput from "../../components/customInput";
+import CustomPasswordInput from "../../components/customPasswordInput";
 import {FaIdCard, FaMobileAlt, FaUser} from "react-icons/fa";
 import commonConfig from '../../config/commonConfig.json';
 import {useNavigate} from "react-router-dom";
@@ -69,7 +70,11 @@ const SignUp = ({goToSignIn}) => {
                 navigate('/main', {replace: true, state: {postData: postData}});
             } else {
                 console.log(response.status)
-                alert('user is already registered, goto sign in')
+                Swal.fire({
+                    title: "Already Registered",
+                    text: "Please goto signin page",
+                    icon: "warning"
+                });
                 console.log('user is already registered, goto sign in')
             }
 
@@ -85,37 +90,47 @@ const SignUp = ({goToSignIn}) => {
     }
 
     const signUpFunction = () => {
-
+        // Check if any of the input fields are empty
+        if (!fullName.trim() || !email.trim() || !mobileNumber.trim() || !password.trim()) {
+            Swal.fire({
+                title: "Empty Field",
+                text: "Please fill in all the required fields",
+                icon: "error"
+            });
+            return; // Exit the function early if any field is empty
+        }
+    
+        // Regular expressions for validation
         const nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
-        const nicRegex = /^(\d{9}[vVxX]|\d{4}[\s-]?\d{4}[\s-]?\d{4})$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const mobileNumberRegex = /^(?:\+?94)?(?:0|94)?[1-9]\d{8}$/;
-
-        if (nameRegex.test(fullName)) {
-            if (true) {
-                if (mobileNumberRegex.test(mobileNumber)) {
-                    handleButtonClick()
-                } else {
-                    Swal.fire({
-                        title: "Invalid Field",
-                        text: "please enter valid mobile number",
-                        icon: "question"
-                    });
-                }
-            } else {
-                Swal.fire({
-                    title: "Invalid Field",
-                    text: "please enter valid nic",
-                    icon: "question"
-                });
-            }
-        } else {
+    
+        // Check if full name, email, mobile number, and password formats are valid
+        if (!nameRegex.test(fullName)) {
             Swal.fire({
                 title: "Invalid Field",
-                text: "please enter valid full name",
-                icon: "question"
+                text: "Please enter a valid full name",
+                icon: "error"
             });
+        } else if (!emailRegex.test(email)) {
+            Swal.fire({
+                title: "Invalid Field",
+                text: "Please enter a valid email address",
+                icon: "error"
+            });
+        } else if (!mobileNumberRegex.test(mobileNumber)) {
+            Swal.fire({
+                title: "Invalid Field",
+                text: "Please enter a valid mobile number",
+                icon: "error"
+            });
+        } else {
+            // All fields are valid, proceed with sign up
+            handleButtonClick();
         }
     }
+    
+    
 
     return (
         <div className={"container sign_main_section flex_col"}>
@@ -134,7 +149,7 @@ const SignUp = ({goToSignIn}) => {
             </div>
 
             <div className={"sign_text_section flex_center"}>
-                <CustomInput LABEL_NAME={commonConfig[selectedLanguage].PASSWORD}
+                <CustomPasswordInput LABEL_NAME={commonConfig[selectedLanguage].PASSWORD}
                              PLACEHOLDER={commonConfig[selectedLanguage].PASSWORD} icon={FaMobileAlt}
                              ON_CHANGE={handlePasswordChange}/>
             </div>

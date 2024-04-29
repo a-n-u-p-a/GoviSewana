@@ -4,6 +4,7 @@ import '../../assets/css/responsive.css';
 import './signIn.css';
 import CustomButton from "../../components/customButton";
 import CustomInput from "../../components/customInput";
+import CustomPasswordInput from "../../components/customPasswordInput";
 import {useNavigate} from "react-router-dom";
 import commonConfig from '../../config/commonConfig.json';
 import {FaIdCard, FaMobileAlt} from "react-icons/fa";
@@ -12,35 +13,35 @@ import Swal from "sweetalert2";
 const SignIn = ({goToSignUp}) => {
 
     const [showInput1, setShowInput1] = useState(true);
-    const [showInput2, setShowInput2] = useState(true);
+    const [showInput2, setShowInput2] = useState(false);
     const [mobileNumber, setMobileNumber] = useState("");
     const [email,setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [onbutton, setonbutton] = useState();
+    // const [onbutton, setonbutton] = useState();
 
-    const handleInput1Focus = () =>{
-        setShowInput2(false)
-    }
+    // const handleInput1Focus = () =>{
+    //     setShowInput2(false)
+    // }
 
-    const handleInput2Focus = () =>{
-        setShowInput1(false)
-    }
+    // const handleInput2Focus = () =>{
+    //     setShowInput1(false)
+    // }
 
-    const handleInput1Blur = () =>{
-        if(onbutton){
-            return
-        }else{
-            setShowInput2(true)
-        }
-    }
+    // const handleInput1Blur = () =>{
+    //     if(onbutton){
+    //         return
+    //     }else{
+    //         setShowInput2(true)
+    //     }
+    // }
 
-    const handleInput2Blur = () =>{
-        if(onbutton){
-            return
-        }else{
-            setShowInput1(true)
-        }
-    }
+    // const handleInput2Blur = () =>{
+    //     if(onbutton){
+    //         return
+    //     }else{
+    //         setShowInput1(true)
+    //     }
+    // }
 
     const [selectedLanguage, setSelectedLanguage] = useState(() => {
         return localStorage.getItem('selectedLanguage') || 'ENG';
@@ -63,9 +64,9 @@ const SignIn = ({goToSignUp}) => {
         setPassword(e.target.value);
     }
 
-    const handleInputChange = (e) => {
-        setMobileNumber("+94" + e.target.value);
-    }
+    // const handleInputChange = (e) => {
+    //     setMobileNumber("+94" + e.target.value);
+    // }
 
     let postData = {
         "Mobile_Number": mobileNumber,
@@ -152,11 +153,29 @@ const SignIn = ({goToSignUp}) => {
         const mobileNumberRegex = /^(?:\+?94)?(?:0|94)?[1-9]\d{8}$/;
         console.log('click')
 
-        if(showInput1 && showInput2){
+        // inf none of the login methods are selected alert user
+
+        // if(showInput1 && showInput2){
+        //     Swal.fire({
+        //         title: "Login",
+        //         text: "please select one of the login methods",
+        //         icon: "question"
+        //     });
+        // }else{
+        //     handleButtonClick()
+        // }
+
+        if(email === "" || password === ""){
             Swal.fire({
-                title: "Login",
-                text: "please select one of the login methods",
-                icon: "question"
+                title: "Empty Field",
+                text: "Please fill in all the required fields",
+                icon: "error"
+            });
+        }else if(email.indexOf("@") === -1){
+            Swal.fire({
+                title: "Wrong Email",
+                text: "Please enter a correct email",
+                icon: "warning"
             });
         }else{
             handleButtonClick()
@@ -173,13 +192,13 @@ const SignIn = ({goToSignUp}) => {
         // }
     }
 
-    const mouseEnterHandle=()=>{
-        setonbutton(true)
-    }
+    // const mouseEnterHandle=()=>{
+    //     setonbutton(true)
+    // }
 
-    const mouseLeaveHandle=()=>{
-        setonbutton(false)
-    }
+    // const mouseLeaveHandle=()=>{
+    //     setonbutton(false)
+    // }
 
     return (
         <div className={"container sign_main_section flex_col container sign_main_section flex_col"}>
@@ -190,33 +209,36 @@ const SignIn = ({goToSignUp}) => {
                 <CustomInput LABEL_NAME={commonConfig[selectedLanguage].EMAIL}
                              PLACEHOLDER={commonConfig[selectedLanguage].EMAIL} icon={FaIdCard}
                              ON_CHANGE={handleInputEmailChange}
-                             ON_FOCUS={handleInput1Focus}
-                             ON_BLUR={handleInput1Blur}/>
+                            //  ON_FOCUS={handleInput1Focus}
+                            //  ON_BLUR={handleInput1Blur}
+                            />
             </div>)}
 
             {showInput1 && (<div className={"sign_text_section flex_center"}>
-                <CustomInput LABEL_NAME={commonConfig[selectedLanguage].PASSWORD}
+                <CustomPasswordInput LABEL_NAME={commonConfig[selectedLanguage].PASSWORD}
                              PLACEHOLDER={commonConfig[selectedLanguage].PASSWORD} icon={FaMobileAlt}
                              ON_CHANGE={handleInputPasswordChange}
-                             ON_FOCUS={handleInput1Focus}
-                             ON_BLUR={handleInput1Blur}/>
+                            //  ON_FOCUS={handleInput1Focus}
+                            //  ON_BLUR={handleInput1Blur}
+                             />
             </div>)}
 
-            {showInput1 && showInput2 && (<p><h2>Use Email or Mobile login</h2></p>)}
+            {/* {showInput1 && showInput2 && (<p><h2>Use Email or Mobile login</h2></p>)} */}
 
-            {showInput2 && (<div className={"sign_text_section flex_center"}>
+            {/* {showInput2 && (<div className={"sign_text_section flex_center"}>
                 <CustomInput LABEL_NAME={commonConfig[selectedLanguage].MOBILE_NO}
                              PLACEHOLDER={commonConfig[selectedLanguage].ENTER_NO} icon={FaMobileAlt}
                              ON_CHANGE={handleInputChange}
                              ON_FOCUS={handleInput2Focus}
                              ON_BLUR={handleInput2Blur}/>
-            </div>)}
+            </div>)} */}
 
             <div className={"signIn_button_section flex_center"}>
                 <CustomButton BTN_NAME={commonConfig[selectedLanguage].BTN_SIGNIN} CLASS_NAME={"customButton"}
                               ON_CLICK={signInFunction}
-                              ON_MOUSE_ENTER={mouseEnterHandle}
-                              ON_MOUSE_LEAVE={mouseLeaveHandle}/>
+                            //   ON_MOUSE_ENTER={mouseEnterHandle}
+                            //   ON_MOUSE_LEAVE={mouseLeaveHandle}
+                              />
             </div>
 
             <div className={"signUp_button_section"}>

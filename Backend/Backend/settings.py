@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-o6dkkq_d0rjug+mc3*62exle4xe_i2c!t@ad$ktwukpini!*@l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app','*']
+ALLOWED_HOSTS = ['govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app','*','https://govisewana-3yc5uvvuza-uw.a.run.app']
 
 
 # Application definition

@@ -47,7 +47,7 @@ const Account = () => {
 
     async function fetchData() {
         try {
-            let url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/userProfile/getUserData/';
+            let url = 'http://127.0.0.1:8000/userProfile/getUserData/';
             let response = await fetch(url, {
                 method: 'POST',
                 headers: {
@@ -60,7 +60,7 @@ const Account = () => {
             if (response.ok) {
                 let result = await response.json();
                 setFullName(result.Full_Name);
-                setEmail(result.email);
+                setEmail(result.Email);
                 setTelNo(result.Mobile_Number);
                 console.log(result);
             } else {
@@ -73,7 +73,7 @@ const Account = () => {
 
     const updateData = {
         "Full_Name": fullName,
-        "EMail": email,
+        "Email": email,
         "Mobile_Number": telNo,
         "Username": localStorage.getItem('Username')
     }
@@ -85,7 +85,7 @@ const Account = () => {
 
         async function postUpdateData() {
             try {
-                let url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/userProfile/updateUserData/';
+                let url = 'http://127.0.0.1:8000/userProfile/updateUserData/';
                 let response = await fetch(url, {
                     method: 'POST',
                     headers: {
@@ -144,7 +144,7 @@ const Account = () => {
                             PLACEHOLDER={telNo}
                             icon={FaMobileAlt}
                             STYLE={{marginTop: '2%'}}
-                            OON_CHANGE={(e) => setTelNo(e.target.value)}
+                            ON_CHANGE={(e) => setTelNo(e.target.value)}
                         />
                     </div>
                     <div className={"acc_select_lang"}>

@@ -36,7 +36,7 @@ const RecommendCard = ({SOURCE_IMG, ALT_IMG, ITEM_NAME, CROP_TYPE, ON_CLICK_CARD
 
     async function fetchCropData() {
         try {
-            let url = 'https://govi-sewana-back-end-final-3yc5uvvuza-uc.a.run.app/cropRecommendation/displayCropData/';
+            let url = 'https://govisewana-3yc5uvvuza-uw.a.run.app/cropRecommendation/displayCropData/';
             let response = await fetch(url, {
                 method: 'POST',
                 headers: {
