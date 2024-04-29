@@ -47,7 +47,7 @@ const Account = () => {
 
     async function fetchData() {
         try {
-            let url = 'http://127.0.0.1:8000/userProfile/getUserData/';
+            let url = 'https://govisewana-3yc5uvvuza-uw.a.run.app/userProfile/getUserData/';
             let response = await fetch(url, {
                 method: 'POST',
                 headers: {
@@ -85,7 +85,7 @@ const Account = () => {
 
         async function postUpdateData() {
             try {
-                let url = 'http://127.0.0.1:8000/userProfile/updateUserData/';
+                let url = 'https://govisewana-3yc5uvvuza-uw.a.run.app/userProfile/updateUserData/';
                 let response = await fetch(url, {
                     method: 'POST',
                     headers: {
