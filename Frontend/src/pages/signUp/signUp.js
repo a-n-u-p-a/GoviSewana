@@ -56,7 +56,7 @@ const SignUp = ({goToSignIn}) => {
 
     const handleButtonClick = async () => {
         try {
-            const url = 'https://govisewana-3yc5uvvuza-uw.a.run.app/signup/register_details/';
+            const url = 'https://govisewana-n5bcf5twmq-uc.a.run.app/signup/register_details/';
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {

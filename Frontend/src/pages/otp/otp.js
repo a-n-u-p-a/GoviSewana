@@ -71,7 +71,7 @@ const Otp = () => {
     // fetch function for sending otp
     const passOTP = async () => {
         try {
-            const url = 'https://govisewana-3yc5uvvuza-uw.a.run.app/login/verify_otp/';
+            const url = 'https://govisewana-n5bcf5twmq-uc.a.run.app/login/verify_otp/';
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
@@ -101,7 +101,7 @@ const Otp = () => {
     // fetch function for resending otp
     const resendOTP = async () => {
         try {
-            const url = 'https://govisewana-3yc5uvvuza-uw.a.run.app/signup/register_details/';
+            const url = 'https://govisewana-n5bcf5twmq-uc.a.run.app/signup/register_details/';
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
