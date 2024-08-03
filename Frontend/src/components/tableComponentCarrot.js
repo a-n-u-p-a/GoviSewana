@@ -21,7 +21,7 @@ const TableComponentCarrot = () => {
             setSelectedLanguage(langValue)
         }
         fetchTabeleData(); // Run fetchTabeleData only once when the component mounts
-    }, [fetchTabeleData]);
+    }, []);
 
 
     async function fetchTabeleData() {

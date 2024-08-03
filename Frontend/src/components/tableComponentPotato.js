@@ -22,7 +22,7 @@ const TableComponentPotato = () => {
         }
 
         fetchTabeleData(); // Run fetchTabeleData only once when the component mounts
-    }, [fetchTabeleData]);
+    }, []);
 
     async function fetchTabeleData() {
         try {
