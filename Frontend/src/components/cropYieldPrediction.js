@@ -65,7 +65,7 @@ const CropYieldPrediction = ({onCropSelect}) => {
         sendFormData();
         async function sendFormData() {
             try {
-                let url = 'https://govisewana-n5bcf5twmq-uc.a.run.app/yieldPrediction/predictor/';
+                let url = 'https://govisewana-production.up.railway.app/yieldPrediction/predictor/';
                 let response = await fetch(url, {
                     method: 'POST',
                     headers: {

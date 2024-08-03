@@ -108,7 +108,7 @@ const Prediction = () => {
 
         async function fetchData() {
             try {
-                let url = 'https://govisewana-n5bcf5twmq-uc.a.run.app/pricePrediction/predictPrice/';
+                let url = 'https://govisewana-production.up.railway.app/pricePrediction/predictPrice/';
                 let response = await fetch(url, {
                     method: 'POST',
                     headers: {

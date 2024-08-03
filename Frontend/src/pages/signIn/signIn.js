@@ -81,7 +81,7 @@ const SignIn = ({goToSignUp}) => {
     const handleButtonClick = async () => {
         try {
             if(showInput2){
-                const url = 'https://govisewana-n5bcf5twmq-uc.a.run.app/login/send_otp/';
+                const url = 'https://govisewana-production.up.railway.app/login/send_otp/';
                 const response = await fetch(url, {
                     method: 'POST',
                     headers: {
@@ -108,7 +108,7 @@ const SignIn = ({goToSignUp}) => {
                 });
             }
             } else {
-                const url = 'https://govisewana-n5bcf5twmq-uc.a.run.app/login/check_email/';
+                const url = 'https://govisewana-production.up.railway.app/login/check_email/';
                 const response = await fetch(url, {
                     method: 'POST',
                     headers: {

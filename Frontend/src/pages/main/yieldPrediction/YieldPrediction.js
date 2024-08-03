@@ -68,7 +68,7 @@ const YieldPrediction = ({ON_CLICK_1, ON_CLICK_2}) => {
         // console.log("inputData", inputData);
 
         try {
-            let url = 'https://govisewana-n5bcf5twmq-uc.a.run.app/yieldPrediction/delete/';
+            let url = 'https://govisewana-production.up.railway.app/yieldPrediction/delete/';
             let response = await fetch(url, {
                 method: 'POST',
                 headers: {
